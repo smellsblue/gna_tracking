@@ -1,0 +1,9 @@
+<% content_for :flex, true %>
+
+<%= javascript_tag do %>
+  var game = <%= @game.to_json_for(active_user).html_safe %>;
+  var assets = <%= asset_paths.to_json.html_safe %>;
+<% end %>
+
+<%= javascript_pack_tag "application" %>
+<div id="game" class="flex flex-vertical flex-vertical-expand"></div>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GNA Tracking</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => "reload" %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => "reload" %>
+  </head>
+
+  <body class="<%= "flex" if content_for(:flex) %>">
+    <div class="container flex flex-vertical">
+      <nav class="navbar navbar-default flex-vertical-fixed">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="/">GNA Tracking</a>
+          </div>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <% if active_user.in_game? %>
+              <ul class="nav navbar-nav">
+                <li <%= %{class="active"}.html_safe if current_game_active? %>><%= link_to "Current Game", game_path(active_user.current_game) %></li>
+              </ul>
+            <% end %>
+
+            <% unless active_user.anonymous? %>
+              <ul class="nav navbar-nav">
+                <li <%= %{class="active"}.html_safe if !current_game_active? && params[:controller] == "games" %>><%= link_to "Games", games_path %></li>
+              </ul>
+            <% end %>
+
+            <ul class="nav navbar-nav navbar-right">
+              <% if active_user.anonymous? %>
+                <li><%= link_to new_user_session_path do %><em>Sign in / Register</em><% end %></li>
+              <% else %>
+                <li <%= %{class="active"}.html_safe if my_profile_active? %>>
+                  <%= link_to my_profile_path do %>
+                    <%= user_avatar active_user %>
+                    <%= active_user.name %>
+                  <% end %>
+                </li>
+
+                <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <% [:error, :alert, :warning, :success, :info, :notice].each do |type| %>
+        <% if flash[type].present? %>
+          <div class="alert alert-<%= flash_class_for type %> alert-dismissible fade in" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <%= flash[type] %>
+          </div>
+        <% end %>
+      <% end %>
+
+      <%= yield %>
+    </div>
+
+    <footer class="footer">
+      <div class="container text-center">
+        <%# TODO: Show some kind of footer info %>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV['GNA_TRACKING_DATABASE_USERNAME'] %>
+  password: <%= ENV['GNA_TRACKING_DATABASE_PASSWORD'] %>
+
+development:
+  <<: *default
+  database: gna_tracking_development
+
+test:
+  <<: *default
+  database: gna_tracking_test
+
+production:
+  <<: *default
+  database: gna_tracking_production
