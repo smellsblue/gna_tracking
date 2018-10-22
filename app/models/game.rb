@@ -20,13 +20,13 @@ class Game < ApplicationRecord
     case game_book
     when "captive"
       self.game_data = {
-        strength: nil,
-        dexterity: nil,
-        will: nil,
+        strength: 5,
+        dexterity: 5,
+        will: 5,
         health: 20,
         time: 0,
         inventory: [
-          nil, nil, nil
+          "", "", ""
         ],
         notes: ""
       }

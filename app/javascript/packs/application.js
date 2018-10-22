@@ -7,7 +7,14 @@ import Game from "./components/Game";
 import reducer from "./reducers";
 
 $(function() {
-  let store = createStore(reducer, { game: window.game, assets: window.assets });
+  let store = createStore(reducer, {
+    assets: window.assets,
+    game: window.game.game_data,
+    gameInfo: {
+      name: window.game.name,
+      book: window.game.game_book
+    }
+  });
 
   ReactDOM.render(
     <Provider store={store}>
