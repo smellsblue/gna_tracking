@@ -1,0 +1,15 @@
+<%= form_tag games_path, method: :post do %>
+  <div class="form-group">
+    <label for="game-name">Name</label>
+    <input type="text" id="game-name" class="form-control" name="name" />
+  </div>
+
+  <div class="form-group">
+    <label for="game-book">Game Book</label>
+    <select id="game-book" name="game_book" class="form-control">
+      <option value="captive">Captive</option>
+    </select>
+  </div>
+
+  <input type="submit" class="btn btn-primary" value="Create" />
+<% end %>

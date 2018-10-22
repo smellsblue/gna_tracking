@@ -22,6 +22,12 @@ class User < ApplicationRecord
     current_game&.id
   end
 
+  def create_game(params)
+    games.create! do |game|
+      game.initialize_game(params)
+    end
+  end
+
   def anonymous?
     false
   end

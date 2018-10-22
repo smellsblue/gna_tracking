@@ -1,7 +1,7 @@
 <% content_for :flex, true %>
 
 <%= javascript_tag do %>
-  var game = <%= @game.to_json_for(active_user).html_safe %>;
+  var game = <%= @game.to_h.to_json.html_safe %>;
   var assets = <%= asset_paths.to_json.html_safe %>;
 <% end %>
 

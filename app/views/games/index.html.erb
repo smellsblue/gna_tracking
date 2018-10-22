@@ -1,6 +1,10 @@
 <% if active_user.anonymous? %>
   Please <%= link_to new_user_session_path do %><em>Sign in / Register</em><% end %>.
 <% else %>
+  <p>
+    <%= link_to "Create", new_game_path, class: "btn btn-primary" %>
+  </p>
+
   <table class="table">
     <thead>
       <tr>
