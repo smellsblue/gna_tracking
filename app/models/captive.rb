@@ -21,6 +21,18 @@ class Captive
     }
   end
 
+  def change_time(params)
+    if params.require(:increase) == "true"
+      raise "Time is at maximum!" if game.game_data["time"] >= 20
+      game.game_data["time"] += 1
+    else
+      raise "Time is at minimum!" if game.game_data["time"] <= 0
+      game.game_data["time"] -= 1
+    end
+
+    game.save!
+  end
+
   def increase_player_attribute(params)
     attr = params.require(:attribute)
     raise "Invalid attribute" unless VALID_ATTRIBUTES.include?(attr)

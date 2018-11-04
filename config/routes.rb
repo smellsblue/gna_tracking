@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :games, only: [:index, :show, :new, :create] do
     resources :captive, only: [] do
       collection do
+        post :change_time
         post :increase_player_attribute
         post :decrease_player_attribute
       end

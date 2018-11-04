@@ -3,6 +3,20 @@ import { CaptiveAjax } from "../../util/Ajax";
 
 export default function(state = {}, action) {
   switch (action.type) {
+  case actionTypes.CHANGE_TIME:
+    CaptiveAjax.changeTime(action.increase);
+    let newTime = state.time;
+
+    if (action.increase) {
+      newTime++;
+    } else {
+      newTime--;
+    }
+
+    return {
+      ...state,
+      time: newTime
+    };
   case actionTypes.INCREASE_PLAYER_ATTRIBUTE:
     CaptiveAjax.increasePlayerAttribute(action.attribute);
 

@@ -41,6 +41,13 @@ function ajax({ url, method = "POST", data = {}, success, error }) {
 }
 
 export default {
+  changeTime: (increase) => {
+    ajax({
+      url: getUrl("change_time"),
+      data: { increase }
+    });
+  },
+
   increasePlayerAttribute: (attribute) => {
     ajax({
       url: getUrl("increase_player_attribute"),

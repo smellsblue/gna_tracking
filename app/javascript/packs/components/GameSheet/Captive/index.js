@@ -5,6 +5,7 @@ import Col from "react-bootstrap/lib/Col";
 import Row from "react-bootstrap/lib/Row";
 
 import PlayerAttribute from "./PlayerAttribute";
+import Time from "./Time";
 
 class Captive extends React.Component {
   render() {
@@ -25,8 +26,14 @@ class Captive extends React.Component {
         </Row>
 
         <Row>
-          <Col xs={4}>
+          <Col xs={12}>
             <PlayerAttribute attr="health" max={20} />
+          </Col>
+        </Row>
+
+        <Row>
+          <Col xs={12}>
+            <Time />
           </Col>
         </Row>
       </React.Fragment>
@@ -40,6 +47,5 @@ const mapStateToProps = (state) => ({
   inventory: state.game.inventory,
   notes: state.game.notes
 });
-
 
 export default connect(mapStateToProps)(Captive);
