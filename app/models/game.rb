@@ -7,8 +7,12 @@ class Game < ApplicationRecord
 
   def to_h
     {
-      name: name,
-      game_book: game_book,
+      game_info: {
+        id: id,
+        name: name,
+        book: game_book,
+        debug: Rails.env.development?
+      },
       game_data: game_data
     }
   end
