@@ -8,12 +8,22 @@ import map from "lodash/map";
 import TimeTick from "./TimeTick";
 
 class Time extends React.Component {
-  render() {
+  ticks() {
     let initialCheckedValues = concat(fill(new Array(this.props.time), true), fill(new Array(20 - this.props.time), false));
 
     return map(initialCheckedValues, (checked, i) => (
       <TimeTick key={`time-tick-${i}`} initiallyChecked={checked} />
     ));
+  }
+
+  render() {
+    return (
+      <React.Fragment>
+        <strong>Time</strong>
+        {' '}
+        {this.ticks()}
+      </React.Fragment>
+    );
   }
 }
 
