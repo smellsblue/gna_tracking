@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get "profiles/me" => "profiles#me", as: :my_profile
 
   resources :games, only: [:index, :show, :new, :create] do
-    resource :captive, only: [] do
+    resources :captive, only: [] do
       collection do
         post :increase_player_attribute
         post :decrease_player_attribute

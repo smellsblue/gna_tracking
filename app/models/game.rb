@@ -5,6 +5,10 @@ class Game < ApplicationRecord
     where.not(state: "done")
   end
 
+  def captive
+    @captive ||= Captive.new(self)
+  end
+
   def to_h
     {
       game_info: {
@@ -23,17 +27,7 @@ class Game < ApplicationRecord
 
     case game_book
     when "captive"
-      self.game_data = {
-        strength: 5,
-        dexterity: 5,
-        will: 5,
-        health: 20,
-        time: 0,
-        inventory: [
-          "", "", ""
-        ],
-        notes: ""
-      }
+      self.game_data = Captive.initial_game_data
     else
       raise "Invalid game book: #{game_book.inspect}"
     end
