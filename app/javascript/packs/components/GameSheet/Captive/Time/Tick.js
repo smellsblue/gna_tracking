@@ -3,9 +3,9 @@ import React from "react";
 
 import Checkbox from "react-bootstrap/lib/Checkbox";
 
-import * as actionCreators from "../../../actions/Captive";
+import * as actionCreators from "../../../../actions/Captive";
 
-class TimeTick extends React.Component {
+class Tick extends React.Component {
   constructor(props) {
     super(props);
     this.state = { checked: this.props.initiallyChecked };
@@ -21,4 +21,4 @@ class TimeTick extends React.Component {
   }
 }
 
-export default connect(null, actionCreators)(TimeTick);
+export default connect(null, actionCreators)(Tick);

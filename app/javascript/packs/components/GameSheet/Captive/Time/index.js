@@ -5,14 +5,14 @@ import concat from "lodash/concat";
 import fill from "lodash/fill";
 import map from "lodash/map";
 
-import TimeTick from "./TimeTick";
+import Tick from "./Tick";
 
 class Time extends React.Component {
   ticks() {
     let initialCheckedValues = concat(fill(new Array(this.props.time), true), fill(new Array(20 - this.props.time), false));
 
     return map(initialCheckedValues, (checked, i) => (
-      <TimeTick key={`time-tick-${i}`} initiallyChecked={checked} />
+      <Tick key={`time-tick-${i}`} initiallyChecked={checked} />
     ));
   }
 
