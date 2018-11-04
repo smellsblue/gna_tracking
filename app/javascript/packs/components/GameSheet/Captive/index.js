@@ -9,19 +9,27 @@ import PlayerAttribute from "./PlayerAttribute";
 class Captive extends React.Component {
   render() {
     return (
-      <Row>
-        <Col xs={4}>
-          <PlayerAttribute attr="strength" />
-        </Col>
+      <React.Fragment>
+        <Row>
+          <Col xs={4}>
+            <PlayerAttribute attr="strength" />
+          </Col>
 
-        <Col xs={4}>
-          <PlayerAttribute attr="dexterity" />
-        </Col>
+          <Col xs={4}>
+            <PlayerAttribute attr="dexterity" />
+          </Col>
 
-        <Col xs={4}>
-          <PlayerAttribute attr="will" />
-        </Col>
-      </Row>
+          <Col xs={4}>
+            <PlayerAttribute attr="will" />
+          </Col>
+        </Row>
+
+        <Row>
+          <Col xs={4}>
+            <PlayerAttribute attr="health" max={20} />
+          </Col>
+        </Row>
+      </React.Fragment>
     );
   }
 }

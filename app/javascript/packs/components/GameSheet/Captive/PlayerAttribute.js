@@ -18,6 +18,10 @@ class PlayerAttribute extends React.Component {
     this.props.decreasePlayerAttribute(this.props.attr);
   }
 
+  isIncreaseDisabled() {
+    return this.props.max && this.props[this.props.attr] >= this.props.max;
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -26,7 +30,7 @@ class PlayerAttribute extends React.Component {
         {this.props[this.props.attr]}
         {' '}
         <ButtonGroup>
-          <Button bsSize="small" onClick={this.increase}><Glyphicon glyph="plus" /></Button>
+          <Button bsSize="small" onClick={this.increase} disabled={this.isIncreaseDisabled()}><Glyphicon glyph="plus" /></Button>
           <Button bsSize="small" onClick={this.decrease}><Glyphicon glyph="minus" /></Button>
         </ButtonGroup>
       </React.Fragment>
@@ -35,6 +39,7 @@ class PlayerAttribute extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
+  health: state.game.health,
   strength: state.game.strength,
   dexterity: state.game.dexterity,
   will: state.game.will

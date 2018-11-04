@@ -1,5 +1,5 @@
 class Captive
-  VALID_ATTRIBUTES = %w(strength dexterity will)
+  VALID_ATTRIBUTES = %w(health strength dexterity will)
 
   attr_reader :game
 
@@ -24,6 +24,7 @@ class Captive
   def increase_player_attribute(params)
     attr = params.require(:attribute)
     raise "Invalid attribute" unless VALID_ATTRIBUTES.include?(attr)
+    raise "Health is at maximum!" if attr == "health" && game.game_data[attr] >= 20
     game.game_data[attr] += 1
     game.save!
   end
