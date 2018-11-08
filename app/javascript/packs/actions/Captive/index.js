@@ -14,3 +14,9 @@ export const increasePlayerAttribute = (attribute) => ({
   type: actionTypes.INCREASE_PLAYER_ATTRIBUTE,
   attribute
 });
+
+export const setInventoryItem = (index, value) => ({
+  type: actionTypes.SET_INVENTORY_ITEM,
+  index,
+  value
+});

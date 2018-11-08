@@ -5,6 +5,7 @@ import Col from "react-bootstrap/lib/Col";
 import Row from "react-bootstrap/lib/Row";
 
 import PlayerAttribute from "./PlayerAttribute";
+import Inventory from "./Inventory";
 import Time from "./Time";
 
 class Captive extends React.Component {
@@ -34,6 +35,15 @@ class Captive extends React.Component {
         <Row>
           <Col xs={12}>
             <Time />
+          </Col>
+        </Row>
+
+        <Row>
+          <Col xs={6}>
+            <Inventory />
+          </Col>
+
+          <Col xs={6}>
           </Col>
         </Row>
       </React.Fragment>

@@ -31,6 +31,15 @@ export default function(state = {}, action) {
       ...state,
       [action.attribute]: state[action.attribute] - 1
     };
+  case actionTypes.SET_INVENTORY_ITEM:
+    // TODO: Ajax call
+    let inventory = [...state.inventory];
+    inventory[action.index] = action.value;
+
+    return {
+      ...state,
+      inventory
+    };
   }
 
   return state;
