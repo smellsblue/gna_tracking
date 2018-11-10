@@ -47,4 +47,11 @@ class Captive
     game.game_data[attr] -= 1
     game.save!
   end
+
+  def set_inventory_item(params)
+    index = params.require(:index).to_i
+    raise "Invalid index!" if index < 0 || index > 2
+    game.game_data["inventory"][index] = params[:value]
+    game.save!
+  end
 end

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
         post :change_time
         post :increase_player_attribute
         post :decrease_player_attribute
+        post :set_inventory_item
       end
     end
   end

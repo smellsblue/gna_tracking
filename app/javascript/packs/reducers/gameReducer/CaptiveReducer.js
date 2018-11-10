@@ -32,7 +32,7 @@ export default function(state = {}, action) {
       [action.attribute]: state[action.attribute] - 1
     };
   case actionTypes.SET_INVENTORY_ITEM:
-    // TODO: Ajax call
+    CaptiveAjax.setInventoryItem(action.index, action.value);
     let inventory = [...state.inventory];
     inventory[action.index] = action.value;
 

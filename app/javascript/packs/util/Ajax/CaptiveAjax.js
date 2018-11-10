@@ -60,5 +60,12 @@ export default {
       url: getUrl("decrease_player_attribute"),
       data: { attribute }
     });
+  },
+
+  setInventoryItem: (index, value) => {
+    ajax({
+      url: getUrl("set_inventory_item"),
+      data: { index, value }
+    });
   }
 };

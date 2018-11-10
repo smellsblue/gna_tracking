@@ -13,4 +13,9 @@ class CaptiveController < ApplicationController
     active_user.games.find(params[:game_id]).captive.decrease_player_attribute(params)
     render json: { success: true }
   end
+
+  def set_inventory_item
+    active_user.games.find(params[:game_id]).captive.set_inventory_item(params)
+    render json: { success: true }
+  end
 end
