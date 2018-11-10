@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import React from "react";
 
-import Checkbox from "react-bootstrap/lib/Checkbox";
+import Glyphicon from "react-bootstrap/lib/Glyphicon";
 
 import * as actionCreators from "../../../../actions/Captive";
 
@@ -11,13 +11,29 @@ class Tick extends React.Component {
     this.state = { checked: this.props.initiallyChecked };
   }
 
-  onChange = () => {
+  onClick = () => {
     this.props.changeTime(!this.state.checked);
     this.setState((state) => ({ checked: !state.checked }));
   }
 
+  checkMark() {
+    if (this.state.checked) {
+      return (
+        <Glyphicon glyph="ok" />
+      );
+    }
+
+    return (
+      <div>&nbsp;</div>
+    );
+  }
+
   render() {
-    return <Checkbox inline checked={this.state.checked} onChange={this.onChange} />;
+    return (
+      <div className="captive-tick" onClick={this.onClick}>
+        {this.checkMark()}
+      </div>
+    );
   }
 }
 

@@ -1,3 +1,21 @@
+.captive-tick {
+    border: 1px solid black;
+    border-left: none;
+    display: inline-block;
+    height: 30px;
+    padding-left: 5px;
+    padding-top: 5px;
+    width: 30px;
+
+    * {
+        cursor: default;
+    }
+
+    &:first-child {
+        border-left: 1px solid black;
+    }
+}
+
 .no-borders {
     border: none !important;
     box-shadow: none !important;
