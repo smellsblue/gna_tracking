@@ -3,9 +3,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import $ from "jquery";
 
-import Button from "react-bootstrap/lib/Button";
 import FormControl from "react-bootstrap/lib/FormControl";
-import Glyphicon from "react-bootstrap/lib/Glyphicon";
 
 import * as actionCreators from "../../../../actions/Captive";
 
@@ -56,7 +54,7 @@ class Item extends React.Component {
 
   form() {
     return (
-      <div>
+      <div className="editable">
         <FormControl type="text" value={this.state.value} placeholder="Inventory Item" onChange={this.onChange} onKeyPress={this.onKeyPress} onKeyUp={this.onKeyUp} onBlur={this.onBlur} />
       </div>
     );
@@ -64,10 +62,8 @@ class Item extends React.Component {
 
   view() {
     return (
-      <div>
+      <div className="editable" onClick={this.edit}>
         {this.props.inventory[this.props.index]}
-        {" "}
-        <Button bsSize="small" onClick={this.edit}><Glyphicon glyph="pencil" /></Button>
       </div>
     );
   }
