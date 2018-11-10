@@ -5,6 +5,8 @@ import concat from "lodash/concat";
 import fill from "lodash/fill";
 import map from "lodash/map";
 
+import FormGroup from "react-bootstrap/lib/FormGroup";
+
 import Tick from "./Tick";
 
 class Time extends React.Component {
@@ -21,7 +23,9 @@ class Time extends React.Component {
       <React.Fragment>
         <strong>Time</strong>
         {' '}
-        {this.ticks()}
+        <FormGroup>
+          {this.ticks()}
+        </FormGroup>
       </React.Fragment>
     );
   }
