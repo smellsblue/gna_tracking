@@ -67,5 +67,12 @@ export default {
       url: getUrl("set_inventory_item"),
       data: { index, value }
     });
+  },
+
+  setNotes: (value) => {
+    ajax({
+      url: getUrl("set_notes"),
+      data: { value }
+    });
   }
 };

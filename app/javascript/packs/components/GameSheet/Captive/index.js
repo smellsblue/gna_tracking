@@ -6,6 +6,7 @@ import Row from "react-bootstrap/lib/Row";
 
 import PlayerAttribute from "./PlayerAttribute";
 import Inventory from "./Inventory";
+import Notes from "./Notes";
 import Time from "./Time";
 
 class Captive extends React.Component {
@@ -44,6 +45,7 @@ class Captive extends React.Component {
           </Col>
 
           <Col xs={6}>
+            <Notes />
           </Col>
         </Row>
       </React.Fragment>

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
         post :increase_player_attribute
         post :decrease_player_attribute
         post :set_inventory_item
+        post :set_notes
       end
     end
   end

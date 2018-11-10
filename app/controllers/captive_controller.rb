@@ -18,4 +18,9 @@ class CaptiveController < ApplicationController
     active_user.games.find(params[:game_id]).captive.set_inventory_item(params)
     render json: { success: true }
   end
+
+  def set_notes
+    active_user.games.find(params[:game_id]).captive.set_notes(params)
+    render json: { success: true }
+  end
 end

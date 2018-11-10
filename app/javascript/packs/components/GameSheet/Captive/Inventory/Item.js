@@ -28,7 +28,10 @@ class Item extends React.Component {
   }
 
   save() {
-    this.props.setInventoryItem(this.props.index, this.state.value);
+    if (this.props.inventory[this.props.index] != this.state.value) {
+      this.props.setInventoryItem(this.props.index, this.state.value);
+    }
+
     this.setState({ editing: false });
   }
 
@@ -55,7 +58,7 @@ class Item extends React.Component {
   form() {
     return (
       <div className="editable">
-        <FormControl type="text" value={this.state.value} placeholder="Inventory Item" onChange={this.onChange} onKeyPress={this.onKeyPress} onKeyUp={this.onKeyUp} onBlur={this.onBlur} />
+        <FormControl type="text" className="no-borders" value={this.state.value} placeholder="Inventory Item" onChange={this.onChange} onKeyPress={this.onKeyPress} onKeyUp={this.onKeyUp} onBlur={this.onBlur} />
       </div>
     );
   }
@@ -63,7 +66,9 @@ class Item extends React.Component {
   view() {
     return (
       <div className="editable" onClick={this.edit}>
-        {this.props.inventory[this.props.index]}
+        <div className="content">
+          {this.props.inventory[this.props.index]}
+        </div>
       </div>
     );
   }

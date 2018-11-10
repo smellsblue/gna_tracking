@@ -40,6 +40,13 @@ export default function(state = {}, action) {
       ...state,
       inventory
     };
+  case actionTypes.SET_NOTES:
+    CaptiveAjax.setNotes(action.value);
+
+    return {
+      ...state,
+      notes: action.value
+    };
   }
 
   return state;

@@ -20,3 +20,8 @@ export const setInventoryItem = (index, value) => ({
   index,
   value
 });
+
+export const setNotes = (value) => ({
+  type: actionTypes.SET_NOTES,
+  value
+});

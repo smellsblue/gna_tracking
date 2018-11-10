@@ -54,4 +54,9 @@ class Captive
     game.game_data["inventory"][index] = params[:value]
     game.save!
   end
+
+  def set_notes(params)
+    game.game_data["notes"] = params[:value]
+    game.save!
+  end
 end
