@@ -24,16 +24,19 @@ class PlayerAttribute extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
-        <strong>{capitalize(this.props.attr)}</strong>
-        {' '}
-        {this.props[this.props.attr]}
-        {' '}
-        <ButtonGroup>
-          <Button bsSize="small" onClick={this.increase} disabled={this.isIncreaseDisabled()}><Glyphicon glyph="plus" /></Button>
-          <Button bsSize="small" onClick={this.decrease}><Glyphicon glyph="minus" /></Button>
-        </ButtonGroup>
-      </React.Fragment>
+      <div className="player-attribute">
+        <div className="attribute-label">
+          {capitalize(this.props.attr)}
+        </div>
+
+        <div className="content">
+          {this.props[this.props.attr]}
+          <ButtonGroup vertical className="adjustments pull-right">
+            <Button bsSize="small" onClick={this.increase} disabled={this.isIncreaseDisabled()}><Glyphicon glyph="plus" /></Button>
+            <Button bsSize="small" onClick={this.decrease}><Glyphicon glyph="minus" /></Button>
+          </ButtonGroup>
+        </div>
+      </div>
     );
   }
 }

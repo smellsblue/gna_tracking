@@ -15,14 +15,11 @@ class Captive extends React.Component {
       <div className="captive">
         <Row>
           <Col xs={4}>
+          </Col>
+
+          <Col xs={8}>
             <PlayerAttribute attr="strength" />
-          </Col>
-
-          <Col xs={4}>
             <PlayerAttribute attr="dexterity" />
-          </Col>
-
-          <Col xs={4}>
             <PlayerAttribute attr="will" />
           </Col>
         </Row>
