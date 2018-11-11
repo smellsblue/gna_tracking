@@ -1,59 +1,61 @@
-.captive-tick {
-    border: 1px solid black;
-    border-left: none;
-    display: inline-block;
-    height: 30px;
-    padding-left: 5px;
-    padding-top: 5px;
-    width: 30px;
+.captive {
+    .tick {
+        border: 1px solid black;
+        border-left: none;
+        display: inline-block;
+        height: 30px;
+        padding-left: 5px;
+        padding-top: 5px;
+        width: 30px;
 
-    * {
-        cursor: default;
-    }
+        * {
+            cursor: default;
+        }
 
-    &:first-child {
-        border-left: 1px solid black;
-    }
-}
-
-.no-borders {
-    border: none !important;
-    box-shadow: none !important;
-}
-
-.preformatted {
-    white-space: pre;
-}
-
-.editable {
-    border: 1px solid black;
-    border-top: none;
-    height: 82px;
-    overflow: auto;
-    width: 100%;
-
-    .content {
-        margin-left: 12px;
-        margin-top: 28px;
-    }
-
-    &.captive-notes {
-        height: 246px;
-
-        .content {
-            margin-top: 6px;
+        &:first-child {
+            border-left: 1px solid black;
         }
     }
 
-    &:first-child {
-        border-top: 1px solid black;
+    .no-borders {
+        border: none !important;
+        box-shadow: none !important;
     }
 
-    input {
-        margin-top: 21px;
+    .preformatted {
+        white-space: pre;
     }
 
-    textarea {
-        height: 100%;
+    .editable {
+        border: 1px solid black;
+        border-top: none;
+        height: 82px;
+        overflow: auto;
+        width: 100%;
+
+        .content {
+            margin-left: 12px;
+            margin-top: 28px;
+        }
+
+        &.notes {
+            height: 246px;
+
+            .content {
+                margin-top: 6px;
+            }
+        }
+
+        &:first-child {
+            border-top: 1px solid black;
+        }
+
+        input {
+            margin-top: 21px;
+        }
+
+        textarea {
+            height: 100%;
+        }
     }
 }

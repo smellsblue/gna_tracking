@@ -51,7 +51,7 @@ class Notes extends React.Component {
 
   form() {
     return (
-      <div className="editable captive-notes">
+      <div className="editable notes">
         <FormControl componentClass="textarea" className="no-borders" value={this.state.value} placeholder="Notes" onChange={this.onChange} onKeyUp={this.onKeyUp} onBlur={this.onBlur} />
       </div>
     );
@@ -59,7 +59,7 @@ class Notes extends React.Component {
 
   view() {
     return (
-      <div className="editable captive-notes" onClick={this.edit}>
+      <div className="editable notes" onClick={this.edit}>
         <div className="content preformatted">
           {this.props.notes}
         </div>

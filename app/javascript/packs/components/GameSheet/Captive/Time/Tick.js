@@ -30,7 +30,7 @@ class Tick extends React.Component {
 
   render() {
     return (
-      <div className="captive-tick" onClick={this.onClick}>
+      <div className="tick" onClick={this.onClick}>
         {this.checkMark()}
       </div>
     );

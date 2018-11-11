@@ -12,7 +12,7 @@ import Time from "./Time";
 class Captive extends React.Component {
   render() {
     return (
-      <React.Fragment>
+      <div className="captive">
         <Row>
           <Col xs={4}>
             <PlayerAttribute attr="strength" />
@@ -48,7 +48,7 @@ class Captive extends React.Component {
             <Notes />
           </Col>
         </Row>
-      </React.Fragment>
+      </div>
     );
   }
 }
