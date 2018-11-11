@@ -22,7 +22,7 @@ class Group extends React.Component {
 
   render() {
     return (
-      <FormGroup>
+      <FormGroup className="time-group">
         {this.tick(0)}
         {this.tick(1)}
         {this.tick(2)}

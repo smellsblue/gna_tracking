@@ -16,7 +16,7 @@ class Game extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <h1>{this.props.gameName} <small>&mdash; {this.gameBook()}</small></h1>
+        <h1 className="game-title">{this.props.gameName} <small>&mdash; {this.gameBook()}</small></h1>
         <GameSheet />
       </React.Fragment>
     );

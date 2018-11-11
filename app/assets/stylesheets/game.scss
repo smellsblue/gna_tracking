@@ -1,21 +1,18 @@
-.captive {
-    .tick {
-        border: 1px solid black;
-        border-left: none;
-        display: inline-block;
-        height: 30px;
-        padding-left: 5px;
-        padding-top: 5px;
-        width: 30px;
+body.black {
+    background-color: black;
 
-        * {
-            cursor: default;
-        }
+    .game-title {
+        color: white;
 
-        &:first-child {
-            border-left: 1px solid black;
+        small {
+            color: #ccc;
         }
     }
+}
+
+.captive {
+    width: 720px;
+    margin-bottom: 100px;
 
     .no-borders {
         border: none !important;
@@ -27,10 +24,15 @@
     }
 
     .player-attribute {
+        background-color: white;
         border: 1px solid black;
         border-top: none;
         height: 82px;
         width: 100%;
+
+        &.health {
+            margin-top: 42px;
+        }
 
         .attribute-label {
             display: inline-block;
@@ -62,7 +64,43 @@
         }
     }
 
+    .time {
+        background-color: white;
+        border: 1px solid black;
+        margin-bottom: 42px;
+        margin-top: 7px;
+        padding-top: 15px;
+
+        .time-row {
+            margin-left: 50%;
+
+            .time-group {
+                display: inline-block;
+                margin-right: 15px;
+            }
+
+            .tick {
+                border: 1px solid black;
+                border-left: none;
+                display: inline-block;
+                height: 30px;
+                padding-left: 5px;
+                padding-top: 5px;
+                width: 30px;
+
+                * {
+                    cursor: default;
+                }
+
+                &:first-child {
+                    border-left: 1px solid black;
+                }
+            }
+        }
+    }
+
     .editable {
+        background-color: white;
         border: 1px solid black;
         border-top: none;
         height: 82px;

@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import React from "react";
+import $ from "jquery";
 
 import Col from "react-bootstrap/lib/Col";
 import Row from "react-bootstrap/lib/Row";
@@ -10,6 +11,14 @@ import Notes from "./Notes";
 import Time from "./Time";
 
 class Captive extends React.Component {
+  componentDidMount() {
+    $("body").addClass("black");
+  }
+
+  componentWillUnmount() {
+    $("body").removeClass("black");
+  }
+
   render() {
     return (
       <div className="captive">

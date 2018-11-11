@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import React from "react";
+import classNames from "classnames";
 
 import Button from "react-bootstrap/lib/Button";
 import ButtonGroup from "react-bootstrap/lib/ButtonGroup";
@@ -23,8 +24,13 @@ class PlayerAttribute extends React.Component {
   }
 
   render() {
+    let classes = classNames({
+      "player-attribute": true,
+      "health": this.props.attr == "health"
+    });
+
     return (
-      <div className="player-attribute">
+        <div className={classes}>
         <div className="attribute-label">
           {capitalize(this.props.attr)}
         </div>
