@@ -14,6 +14,26 @@ body.black {
     width: 720px;
     margin-bottom: 100px;
 
+    .character-sheet-container {
+        width: 100%;
+
+        .character-sheet {
+            background-image: image-url("character-sheet.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 48px;
+            margin: 10px auto 10px;
+            width: 310px;
+        }
+    }
+
+    .portrait {
+        background-image: image-url("portrait.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 250px;
+    }
+
     .no-borders {
         border: none !important;
         box-shadow: none !important;
@@ -31,16 +51,32 @@ body.black {
         width: 100%;
 
         &.health {
-            margin-top: 42px;
+            margin-top: 30px;
         }
 
         .attribute-label {
             display: inline-block;
             height: 100%;
-            padding-left: 12px;
-            padding-top: 28px;
             vertical-align: top;
-            width: 65%;
+            width: 235px;
+
+            &.strength {
+                background-image: image-url("strength.png");
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            &.dexterity {
+                background-image: image-url("dexterity.png");
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            &.will {
+                background-image: image-url("will.png");
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
         }
 
         .content {
@@ -49,8 +85,8 @@ body.black {
             font-size: 3em;
             height: 100%;
             vertical-align: top;
-            width: 35%;
-            padding-left: 20px;
+            width: 49%;
+            padding-left: 86px;
             padding-top: 10px;
 
             .adjustments {
@@ -97,6 +133,22 @@ body.black {
                 }
             }
         }
+    }
+
+    .inventory-label {
+        background-image: image-url("inventory.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        border: 1px solid black;
+        height: 50px;
+    }
+
+    .notes-label {
+        background-image: image-url("notes.png");
+        background-size: contain;
+        background-repeat: repeat;
+        border: 1px solid black;
+        height: 50px;
     }
 
     .editable {

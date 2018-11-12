@@ -22,8 +22,13 @@ class Captive extends React.Component {
   render() {
     return (
       <div className="captive">
+        <div className="character-sheet-container">
+          <div className="character-sheet" />
+        </div>
+
         <Row>
           <Col xs={4}>
+            <div className="portrait" />
           </Col>
 
           <Col xs={8}>

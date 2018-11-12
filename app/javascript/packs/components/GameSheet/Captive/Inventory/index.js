@@ -6,6 +6,7 @@ class Inventory extends React.Component {
   render() {
     return (
       <div>
+        <div className="inventory-label" />
         <Item index={0} />
         <Item index={1} />
         <Item index={2} />

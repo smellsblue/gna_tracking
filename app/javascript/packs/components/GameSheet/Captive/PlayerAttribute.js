@@ -30,10 +30,8 @@ class PlayerAttribute extends React.Component {
     });
 
     return (
-        <div className={classes}>
-        <div className="attribute-label">
-          {capitalize(this.props.attr)}
-        </div>
+      <div className={classes}>
+        <div className={`attribute-label ${this.props.attr}`} />
 
         <div className="content">
           {this.props[this.props.attr]}

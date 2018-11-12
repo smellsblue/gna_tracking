@@ -59,9 +59,13 @@ class Notes extends React.Component {
 
   view() {
     return (
-      <div className="editable notes" onClick={this.edit}>
-        <div className="content preformatted">
-          {this.props.notes}
+      <div>
+        <div className="notes-label" />
+
+        <div className="editable notes" onClick={this.edit}>
+          <div className="content preformatted">
+            {this.props.notes}
+          </div>
         </div>
       </div>
     );
