@@ -2,7 +2,7 @@ body.black {
     background-color: black;
 
     .game-title {
-        color: white;
+        color: #e2dfda;
 
         small {
             color: #ccc;
@@ -11,6 +11,14 @@ body.black {
 }
 
 .captive {
+    .btn {
+        background-color: #efebe5;
+
+        &:hover {
+            background-color: #d2ccc3;
+        }
+    }
+
     width: 720px;
     margin-bottom: 100px;
 
@@ -44,15 +52,11 @@ body.black {
     }
 
     .player-attribute {
-        background-color: white;
+        background-color: #e2dfda;
         border: 1px solid black;
         border-top: none;
         height: 82px;
         width: 100%;
-
-        &.health {
-            margin-top: 30px;
-        }
 
         .attribute-label {
             display: inline-block;
@@ -95,13 +99,33 @@ body.black {
             }
         }
 
+        &.health {
+            background-image: image-url("health.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 140px;
+            margin-top: 30px;
+
+            .content {
+                border-left: none;
+                padding-left: 190px;
+                padding-top: 40px;
+                width: 67%;
+
+                .adjustments {
+                    margin-right: 33px;
+                    margin-top: 5px;
+                }
+            }
+        }
+
         &:first-child {
             border-top: 1px solid black;
         }
     }
 
     .time {
-        background-color: white;
+        background-color: #e2dfda;
         border: 1px solid black;
         margin-bottom: 42px;
         margin-top: 7px;
@@ -152,7 +176,7 @@ body.black {
     }
 
     .editable {
-        background-color: white;
+        background-color: #e2dfda;
         border: 1px solid black;
         border-top: none;
         height: 82px;
@@ -177,10 +201,12 @@ body.black {
         }
 
         input {
+            background-color: #e2dfda;
             margin-top: 21px;
         }
 
         textarea {
+            background-color: #e2dfda;
             height: 100%;
         }
     }

@@ -51,8 +51,12 @@ class Notes extends React.Component {
 
   form() {
     return (
-      <div className="editable notes">
-        <FormControl componentClass="textarea" className="no-borders" value={this.state.value} placeholder="Notes" onChange={this.onChange} onKeyUp={this.onKeyUp} onBlur={this.onBlur} />
+      <div>
+        <div className="notes-label" />
+
+        <div className="editable notes">
+          <FormControl componentClass="textarea" className="no-borders" value={this.state.value} placeholder="Notes" onChange={this.onChange} onKeyUp={this.onKeyUp} onBlur={this.onBlur} />
+        </div>
       </div>
     );
   }
