@@ -31,7 +31,7 @@ gem "jbuilder", "~> 2.5"
 # Use Capistrano for deployment
 # gem "capistrano-rails", group: :development
 gem "bootstrap-sass", "~> 3.3.7"
-gem "devise-bootstrap-views"
+gem "devise-bootstrap-views", "0.0.11"
 gem "jquery-rails"
 gem "webpacker"
 gem "react-rails"
