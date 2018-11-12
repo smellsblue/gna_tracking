@@ -125,11 +125,14 @@ body.black {
     }
 
     .time {
-        background-color: #e2dfda;
+        background-image: image-url("time.png");
+        background-size: cover;
+        background-repeat: no-repeat;
         border: 1px solid black;
-        margin-bottom: 42px;
+        height: 140px;
+        margin-bottom: 30px;
         margin-top: 7px;
-        padding-top: 15px;
+        padding-top: 30px;
 
         .time-row {
             margin-left: 50%;
@@ -140,6 +143,7 @@ body.black {
             }
 
             .tick {
+                background-color: #e2dfda;
                 border: 1px solid black;
                 border-left: none;
                 display: inline-block;
